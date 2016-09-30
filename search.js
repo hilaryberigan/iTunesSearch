@@ -62,7 +62,7 @@ function handleReturnResults(totalResults) {
       trackName: currentItem.trackCensoredName,
       trackUrl: currentItem.trackViewUrl,
       artistName: currentItem.artistName,
-      artistUrl: currentItem.artistLinkUrl,
+      artistUrl: currentItem.artistViewUrl,
       collectionName: currentItem.collectionCensoredName,
       collectionUrl: currentItem.collectionViewUrl,
       genre: currentItem.primaryGenreName,
@@ -115,11 +115,14 @@ function displayResultsInHtml(readyResults){
       htmlToAdd += '<tr>';
       htmlToAdd += '<td><img src=artwork>'.replace("artwork", individual.artwork)+'</td>';
       htmlToAdd += '<td>Track:&nbsp;&nbsp; track'.replace("track", individual.trackName) + '</td>';
-      htmlToAdd += '<td>Artist:&nbsp;&nbsp;<a href="artistUrl">'.replace("artistUrl", individual.artistUrl) + 'artist'.replace("artist", individual.artistName) + '</a></td>';
+      htmlToAdd += '<td>Artist:&nbsp;&nbsp;<a href="artistUrl" target="_blank">'.replace("artistUrl", individual.artistUrl) + 'artist'.replace("artist", individual.artistName) + '</a></td>';
       htmlToAdd += '<td>Album Name:&nbsp;&nbsp; album'.replace("album", individual.albumName) + '</td>';
-      //htmlToAdd += '<td><a href="artisturl" target="_blank">'.replace("artisturl", individual.artistUrl) + 'ArtistBio </a></td>';
+      htmlToAdd += '<td><audio controls src="previewUrl" preload="none"></audio></td>'.replace("previewUrl", individual.preview);
       htmlToAdd += '</tr>';
     }
+
+
+
 
 
 
@@ -133,10 +136,13 @@ function displayResultsInHtml(readyResults){
 
 
 
-      htmlToAdd = '<div class="container"><table class="table" id="myTable"><thead><tr><th></th><th>Track</th><th>Artist</th><th>Album</th></tr></thead><tbody id="myTableBody"> ' + htmlToAdd;
-      htmlToAdd += '</tbody></table><div class="row"><div class="col-md-12 text-center"><ul class="pagination pagination-xs pager" id="myPager"></ul></div></div></div>';
+      var opening = '<div class="container"><table class="table" id="myTable"><thead><tr>';
+      var headers = '<th></th><th>Track</th><th>Artist</th><th>Album</th><th>Preview</th></tr></thead>';
+      var body = '<tbody id="myTableBody"> ' + htmlToAdd;
+      var ending = '</tbody></table><div class="row"><div class="col-md-12 text-center"><ul class="pagination pagination-xs pager" id="myPager"></ul></div></div></div>';
+      var finalHtml = opening + headers + body + ending;
 
-    $('#itunes-results').html(htmlToAdd);
+    $('#itunes-results').html(finalHtml);
 
 
 }
