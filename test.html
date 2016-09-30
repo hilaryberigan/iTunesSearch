@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap.css"/>
+	<link rel="stylesheet" href="styles.css"/>
+
+		<title>iTunes - Music Search in javascript</title>
+		<style type="text/css">
+		.search-result {
+			margin-bottom: 5px;
+			padding: 5px;
+		}
+
+		.search-result  .label{
+			display: inline-block;
+			width: 200px;
+		}
+    button,
+    html input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      -webkit-appearance: button;
+      cursor: pointer;
+      position:relative;
+      padding:6px 15px;
+      left:-8px;
+      border:2px solid #207cca;
+      background-color:#207cca;
+      color:#fafafa;
+
+    }
+    html input[type="text"]
+
+
+    form {
+                    width:500px;
+                    margin:50px auto;
+    }
+    .search {
+                    padding:8px 15px;
+                    background:rgba(50, 50, 50, 0.2);
+                    border:0px solid #dbdbdb;
+    }
+		</style>
+
+
+	</head>
+
+	<body>
+		Please enter a search term below :<br />
+		<div class="input-group stylish-input-group">
+		<input type="text" id="search-input" title="Enter Search Keyword" />
+		<input type="submit" value="Perform iTunes Search" onclick="doSearch()" />
+    <!-- <select id="filter" name="Filter">
+      <option value="musicArtist">By Artist</option>
+      <option value="album">By Album</option>
+      <option value="musicTrack">By Song</option>
+    </select>-->
+		<select id="sort-choice" name "Sort">
+				<option value="noFilter">Sort</option>
+				<option value="artistName">Artist</option>
+				<option value="trackName">Song Name</option>
+				<option value="genre">Genre</option>
+		</select>
+	</div>
+
+		<div class="" id="itunes-results">
+	       </div>
+	</body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="pagination.js"></script>
+  <script type="text/javascript" src="search.js"></script>
+
+
+</html>
