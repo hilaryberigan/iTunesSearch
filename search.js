@@ -73,7 +73,7 @@ function handleReturnResults(totalResults) {
       albumName: currentItem.collectionName,
       albumUrl: currentItem.collectionViewUrl,
       albumPrice: currentItem.collectionPrice,
-      albumExplicitness: currentItem.collectionExplicitness,
+      trackPrice: currentItem.trackPrice,
       releaseDate: new Date(Date.parse(currentItem.releaseDate)).toDateString()
     };
     readyResults[i] = individualResult;//not doing anything with this array right now
@@ -84,9 +84,15 @@ function handleReturnResults(totalResults) {
     var typeChoice = $('#sort-choice').val();
     readyResults = sortBySortInput(readyResults, typeChoice);
 
-  document.getElementById('#home-content').display = "none";
-  displayResultsInHtml(readyResults);
-  $('#myTableBody').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:10});
+  document.getElementById("home-content").style.display = "none";
+  if (readyResults.length != 0){
+      displayResultsInHtml(readyResults);
+      $('#myTableBody').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:10});
+    }
+    else {
+      $('#display-message').html("I'm sorry, your search yielded no results. Please try again with other key words.");
+    }
+
 }
 
 
@@ -103,9 +109,9 @@ function displayResultsInHtml(readyResults){
     function getDisplayForTrack(individual){
       htmlToAdd += '<tr>';
       htmlToAdd += '<td><img src=artwork>'.replace("artwork", individual.artwork)+'</td>';
-      htmlToAdd += '<td>Track:&nbsp;&nbsp;<a href="trackUrl" target="_blank">'.replace("trackUrl", individual.trackUrl) + 'track'.replace("track", individual.trackName) + '</a></td>';
+      htmlToAdd += '<td>Track:&nbsp;&nbsp;<a href="trackUrl" target="_blank">'.replace("trackUrl", individual.trackUrl) + 'track'.replace("track", individual.trackName) + '</a><br>Price:price&nbsp;&nbsp;'.replace("price", individual.trackPrice) + '</td>';
       htmlToAdd += '<td>Artist:&nbsp;&nbsp;<a href="artistUrl" target="_blank">'.replace("artistUrl", individual.artistUrl) + 'artist'.replace("artist", individual.artistName) + '</a></td>';
-      htmlToAdd += '<td>Album Name:&nbsp;&nbsp; album'.replace("album", individual.albumName) + '<br>Album Released:&nbsp;&nbsp; date'.replace("date", individual.releaseDate) + '<br>Genre:&nbsp;&nbsp; genre'.replace("genre", individual.genre) + '</td>';
+      htmlToAdd += '<td>Album Name:&nbsp;&nbsp;<a href="albumUrl" target="_blank">'.replace("albumUrl", individual.albumUrl) + 'album'.replace("album", individual.albumName) + '</a><br>Album Released:&nbsp;&nbsp; date'.replace("date", individual.releaseDate) + '<br>Genre:&nbsp;&nbsp; genre'.replace("genre", individual.genre) + '</td>';
       htmlToAdd += '<td><audio controls src="previewUrl" preload="none"></audio></td>'.replace("previewUrl", individual.preview);
       htmlToAdd += '</tr>';
     }
