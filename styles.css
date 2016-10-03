@@ -52,6 +52,19 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 4vh;
+  font-family: 'Arial', sans-serif;
+  color: rgb(100, 100, 200);
+  text-align: center;
+}
+h4 {
+  font-size: 5vh;
+  font-family: 'Pacifico', sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px black;
+}
+
 .btn-info {
     color: rgb(100, 100, 200);
     background-color: white;
@@ -72,7 +85,7 @@ tbody{
 .sort-box{
   color: grey;
   border-radius: 3px;
-  background: rgb(220,220,240); 
+  background: rgb(220,220,240);
 }
 
 .result-table{
@@ -82,4 +95,30 @@ tbody{
 
 table{
   margin-top: 5vh;
+}
+
+.pager li>a, .pager li>span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: rgb(220, 220, 240);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: rgb(50, 50, 70);
+    text-decoration: none;
+    background-color: rgb(220, 220, 240);
+    border: 1px solid #ddd;
+}
+
+.home-content{
+  text-align: center;
+}
+.heading-box{
+  align-self: center;
 }

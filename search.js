@@ -3,7 +3,7 @@
 
 
 function search() {
-  if($('#search-input').val()!= null){
+  if($('#search-input').val()!= ""){
   var encodedParameters = handleParameters();
   var url = 'https://itunes.apple.com/search?' + encodedParameters;
   $('head').append('<script src="' + url + '"></script>');
@@ -84,6 +84,7 @@ function handleReturnResults(totalResults) {
     var typeChoice = $('#sort-choice').val();
     readyResults = sortBySortInput(readyResults, typeChoice);
 
+  document.getElementById('#home-content').display = "none";
   displayResultsInHtml(readyResults);
   $('#myTableBody').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:10});
 }
