@@ -76,7 +76,7 @@ function handleReturnResults(totalResults) {
       trackPrice: currentItem.trackPrice,
       releaseDate: new Date(Date.parse(currentItem.releaseDate)).toDateString()
     };
-    readyResults[i] = individualResult;//not doing anything with this array right now
+    readyResults[i] = individualResult;
 
 
   }
@@ -101,7 +101,6 @@ function handleReturnResults(totalResults) {
 function displayResultsInHtml(readyResults){
     var htmlToAdd = "";
 
-    //var filterChoice = $('#filter').val();
     readyResults = readyResults.forEach(getDisplayForTrack);
 
 
@@ -109,7 +108,7 @@ function displayResultsInHtml(readyResults){
     function getDisplayForTrack(individual){
       htmlToAdd += '<tr>';
       htmlToAdd += '<td><img src=artwork>'.replace("artwork", individual.artwork)+'</td>';
-      htmlToAdd += '<td>Track:&nbsp;&nbsp;<a href="trackUrl" target="_blank">'.replace("trackUrl", individual.trackUrl) + 'track'.replace("track", individual.trackName) + '</a><br>Price:price&nbsp;&nbsp;'.replace("price", individual.trackPrice) + '</td>';
+      htmlToAdd += '<td>Track:&nbsp;&nbsp;<a href="trackUrl" target="_blank">'.replace("trackUrl", individual.trackUrl) + 'track'.replace("track", individual.trackName) + '</a><br>Price: $price&nbsp;&nbsp;'.replace("price", individual.trackPrice) + '</td>';
       htmlToAdd += '<td>Artist:&nbsp;&nbsp;<a href="artistUrl" target="_blank">'.replace("artistUrl", individual.artistUrl) + 'artist'.replace("artist", individual.artistName) + '</a></td>';
       htmlToAdd += '<td>Album Name:&nbsp;&nbsp;<a href="albumUrl" target="_blank">'.replace("albumUrl", individual.albumUrl) + 'album'.replace("album", individual.albumName) + '</a><br>Album Released:&nbsp;&nbsp; date'.replace("date", individual.releaseDate) + '<br>Genre:&nbsp;&nbsp; genre'.replace("genre", individual.genre) + '</td>';
       htmlToAdd += '<td><audio controls src="previewUrl" preload="none"></audio></td>'.replace("previewUrl", individual.preview);
@@ -140,7 +139,7 @@ function sortBySortInput(readyResults, typeChoice)
 
   function compare(a, b){
 
-    if (a[typeChoice] < b[typeChoice]) //this doesn't work need to figure out how to get typeChoice to pull in actual property
+    if (a[typeChoice] < b[typeChoice])
       return -1;
     if (a[typeChoice] > b[typeChoice])
       return 1;
@@ -151,10 +150,3 @@ function sortBySortInput(readyResults, typeChoice)
 function sortByFilter(readyResults, filter){
 
 }
-
-
-
-
-
-  //}
-//})
