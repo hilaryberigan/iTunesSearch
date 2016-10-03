@@ -30,7 +30,7 @@ var numPages = Math.ceil(numItems/perPage);
 pager.data("curr",0);
 
 if (settings.showPrevNext){
-    $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
+    $('<li><a href="#" class="prev_link">Previous</a></li>').appendTo(pager);
 }
 
 var curr = 0;
@@ -40,7 +40,7 @@ while(numPages > curr && (settings.hidePageNumbers==false)){
 }
 
 if (settings.showPrevNext){
-    $('<li><a href="#" class="next_link">»</a></li>').appendTo(pager);
+    $('<li><a href="#" class="next_link">Next</a></li>').appendTo(pager);
 }
 
 pager.find('.page_link:first').addClass('active');

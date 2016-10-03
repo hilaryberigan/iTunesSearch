@@ -45,18 +45,11 @@
 body {
   background: rgb(25, 25, 50);
 }
-.heading-box{
-  border-color: black;
-  box-shadow: 10px;
-  border-width: thick;
-  margin-top: 100px;
-  text-align: center;
-
-}
 h2 {
   font-size: 10vh;
   font-family: 'Pacifico', cursive;
   color: rgb(100, 100, 200);
+  text-align: center;
 }
 
 .btn-info {
@@ -70,7 +63,23 @@ thead{
   text-shadow: 1px 1px black;
 }
 
+tbody{
+  background-color: rgba(255,255,255,0.1);
+  color: grey;
+  text-shadow: 1px 1px black;
+}
+
 .sort-box{
   color: grey;
   border-radius: 3px;
+  background: rgb(220,220,240); 
+}
+
+.result-table{
+  margin: 5vh;
+}
+
+
+table{
+  margin-top: 5vh;
 }

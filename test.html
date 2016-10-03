@@ -11,42 +11,56 @@
 
 	<body>
 
-		<div class="container">
-	<div class="row">
-        <div class="col-md-6">
-					<div class="heading-box">
-    		<h2>iTunes Search</h2></div>
-            <div>
-                <div class="input-group col-md-12">
+
+	<div class="container">
+		<div class="row" style="margin-top: 10vh">
+				<div class="col-sm-1>"></div>
+				<div class="col-sm-10">
+					<h2>iTunes Search</h2>
+				</div>
+				<div class="col-sm-1>"></div>
+			</div>
+
+					<div class="row">
+							<div class="col-sm-1>"></div>
+                <div class="input-group col-sm-10">
                     <input type="text" class="form-control input-lg" placeholder="Search iTunes" id="search-input" />
                     <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button" onclick="doSearch()">
+                        <button class="btn btn-info btn-lg" type="button" onclick="search()">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
 											</span>
-											  </div>
-												<div class="input-group">
-											<select id="sort-choice" name="Sort" class="sort-box">
-													<option value="noFilter">Sort</option>
-													<option value="artistName">Artist</option>
-													<option value="trackName">Song Name</option>
-													<option value="genre">Genre</option>
-											</select>
 										</div>
 
-												<!-- <select id="filter" name="Filter">
-										      <option value="musicArtist">By Artist</option>
-										      <option value="album">By Album</option>
-										      <option value="musicTrack">By Song</option>
-										    </select>-->
 
-
-            </div>
-        </div>
-	</div>
 </div>
+	<div class="col-sm-1>"></div>
+		<div class="input-group ">
+				<select id="filter" name="Filter" class= "sort-box">
+						<option value="noFilter">Search For...</option>
+						<option value="artistTerm">Artist</option>
+						<option value="albumTerm">Album</option>
+						<option value="songTerm">Song</option>
+				</select>
+				<select id="sort-choice" name= "Sort" class= "sort-box">
+						<option value="noFilter">Display Results in Order Of...</option>
+						<option value="artistName">Artist</option>
+						<option value="album">Album Name</option>
+						<option value="trackName">Song Name</option>
+						<option value="genre">Genre</option>
+				</select>
+			</div>
+					</div>
 
-		<div class="" id="itunes-results">
+
+
+
+
+
+		<div class="home-content">
+
+		</div>
+		<div id="itunes-results">
 	       </div>
 	</body>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
